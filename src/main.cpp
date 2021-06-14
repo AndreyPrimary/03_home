@@ -16,7 +16,7 @@
 
 void testCommon()
 {
-    IpHolder holder_int(2345678);
+    // IpHolder holder_int(2345678);
     // IpHolder holder_string((std::string)"string");
     
     // std::list<int> int_list = {12,23,34,45,56};
@@ -25,6 +25,17 @@ void testCommon()
     // std::vector<int> int_vector = {98,87,76,65,54};
     // IpHolder holder_list(int_vector);
 
+    int int_val = 2345678;
+    print_ip(int_val);
+
+    std::string string_val = "7610294";
+    print_ip(string_val);
+
+    std::list<int> int_list = {12,23,34,45,56};
+    print_ip(int_list);
+
+    std::vector<int> int_vector = {98,87,76,65,54};
+    print_ip(int_vector);
 }
 
 int main (int, char **)
