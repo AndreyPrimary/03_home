@@ -18,6 +18,11 @@ jobs:
       - run: cmake --build . --target test
       - run: cmake --build . --target package
 
+      uses: mattnotmitt/doxygen-action@v1
+      with:
+          working-directory: 'src/'
+          doxyfile-path: 'docs/Doxygen'
+
       #- name: Get asset name
       #  id: get_asset_name
       #  run: echo "::set-output name=assert_name::$(ls dist | grep gz)"
@@ -44,3 +49,4 @@ jobs:
           #asset_path: dist/${{ steps.get_asset_name.outputs.assert_name }}
           #asset_name: ${{ steps.get_asset_name.outputs.assert_name }}          
           asset_content_type: application/vnd.debian.binary-package
+
