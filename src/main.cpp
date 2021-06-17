@@ -4,6 +4,7 @@
 #define LOG_LIST
 
 #include <iostream>
+#include <string>
 // #include <fstream>
 // #include <sstream>
 // #include <map>
@@ -38,12 +39,24 @@ void testCommon()
     print_ip(int_vector);
 }
 
+void test()
+{
+    print_ip( char{-1} ); // 255
+    print_ip( short{0} ); // 0.0
+    print_ip( int{2130706433} ); // 127.0.0.1
+    print_ip( long{8875824491850138409} );         // 123.45.67.89.101.112.131.41
+    print_ip( std::string{"Hello, World!"} ); // Hello, World!
+    print_ip( std::vector<int>{100,   200,   300,   400}   );   // 100.200.300.400
+    print_ip( std::list<short>{400,   300,   200,   100}   );   // 400.300.200.100
+}
+
 int main (int, char **)
 {
     
     std::cout << "Design Version: " << version() << std::endl;
 
-    testCommon();
+    // testCommon();
+    test();
 
     return 0;
 }

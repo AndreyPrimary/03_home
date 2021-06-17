@@ -47,10 +47,11 @@ int print_ip(T val)
 
     ipList ip_list;
 
-    while (rest != 0) {
+    for (size_t i = 0; i < sizeof(T); i++) {
+    // while (rest != 0) {
         ip = rest % 0x100;
         rest = rest / 0x100;
-        ip_list.push_back(ip);
+        ip_list.push_front(ip);
     }
 
     std::string res;
