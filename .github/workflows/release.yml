@@ -23,6 +23,7 @@ jobs:
           working-directory: 'src/'
           doxyfile-path: '../docs/DoxyFile'
 
+
       #- name: Get asset name
       #  id: get_asset_name
       #  run: echo "::set-output name=assert_name::$(ls dist | grep gz)"
@@ -37,6 +38,7 @@ jobs:
           release_name: Release ${{ github.run_number }}
           draft: false
           prerelease: false
+
       - name: Upload Release Asset
         id: upload-release-asset
         uses: actions/upload-release-asset@v1
@@ -49,4 +51,10 @@ jobs:
           #asset_path: dist/${{ steps.get_asset_name.outputs.assert_name }}
           #asset_name: ${{ steps.get_asset_name.outputs.assert_name }}          
           asset_content_type: application/vnd.debian.binary-package
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
 
