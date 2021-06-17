@@ -19,7 +19,7 @@ jobs:
       - run: cmake --build . --target package
 
       - uses: mattnotmitt/doxygen-action@v1
-      with:
+        with:
           working-directory: 'src/'
           doxyfile-path: 'docs/Doxygen'
 
