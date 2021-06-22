@@ -13,19 +13,19 @@ jobs:
         with:
           submodules: true
 
+      - run: sudo apt install libboost-all-dev
+      - run: cmake .
+      - run: cmake --build .
+      - run: cmake --build . --target test
+      - run: cmake --build . --target package
+
       - name: Doxygen Action
         uses: mattnotmitt/doxygen-action@v1.1.0
         with:
           # Path to Doxyfile
           doxyfile-path: './docs/DoxyFile' # default is ./Doxyfile
           # Working directory
-          working-directory: "." # default is .
-
-      - run: sudo apt install libboost-all-dev
-      - run: cmake .
-      - run: cmake --build .
-      - run: cmake --build . --target test
-      - run: cmake --build . --target package
+          working-directory: "./src" # default is .
 
       #- name: Doxygen Action  
       #  uses: mattnotmitt/doxygen-action@v1
