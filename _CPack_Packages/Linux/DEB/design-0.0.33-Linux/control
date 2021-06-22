@@ -1,0 +1,9 @@
+Architecture: amd64
+Description: design built using CMake
+Maintainer: example@example.com
+Package: design
+Priority: optional
+Section: devel
+Version: 0.0.33
+Installed-Size: 101
+

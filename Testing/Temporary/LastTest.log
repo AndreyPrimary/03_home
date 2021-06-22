@@ -1,0 +1,22 @@
+Start testing: Jun 22 20:38 UTC
+----------------------------------------------------------
+1/1 Testing: test_version
+1/1 Test: test_version
+Command: "/home/runner/work/03_home/03_home/test_version"
+Directory: /home/runner/work/03_home/03_home
+"test_version" start time: Jun 22 20:38 UTC
+Output:
+----------------------------------------------------------
+Running 1 test case...
+
+[1;32;49m*** No errors detected
+[0;39;49m
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test_version" end time: Jun 22 20:38 UTC
+"test_version" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 22 20:38 UTC
