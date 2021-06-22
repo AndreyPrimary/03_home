@@ -81,4 +81,5 @@ jobs:
           publish_dir: ./html
       #    allow_empty_commit: true
           enable_jekyll: true
+          keep_files: true
       #    cname: github.peaceiris.com
