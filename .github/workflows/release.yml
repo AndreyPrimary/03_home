@@ -78,7 +78,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html/html
+          publish_dir: ./03_home
       #    allow_empty_commit: true
           enable_jekyll: true
           keep_files: true
