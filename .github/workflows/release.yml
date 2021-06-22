@@ -62,11 +62,11 @@ jobs:
           #asset_name: ${{ steps.get_asset_name.outputs.assert_name }}          
           asset_content_type: application/vnd.debian.binary-package
 
-      - name: Deploy doxygen
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: "./html"
+      #- name: Deploy doxygen
+      #  uses: peaceiris/actions-gh-pages@v3
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: "./html"
 
       #- name: Deploy
       #      uses: peaceiris/actions-gh-pages@v3
@@ -74,11 +74,11 @@ jobs:
       #        github_token: ${{ secrets.GITHUB_TOKEN }}
       #        publish_dir: ./html
 
-      #- name: Deploy to GitHub Pages
-      #  uses: peaceiris/actions-gh-pages@v3
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    publish_dir: ./
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
       #    allow_empty_commit: true
-      #    enable_jekyll: true
+          enable_jekyll: true
       #    cname: github.peaceiris.com
