@@ -18,11 +18,19 @@ jobs:
       - run: cmake --build . --target test
       - run: cmake --build . --target package
 
-      - uses: mattnotmitt/doxygen-action@v1
-        with:
-          working-directory: 'src/'
-          doxyfile-path: '../docs/DoxyFile'
+      #- name: Doxygen Action  
+      #  uses: mattnotmitt/doxygen-action@v1
+      #  with:
+      #    working-directory: 'src/'
+      #    doxyfile-path: '../docs/DoxyFile'
 
+      - name: Doxygen Action
+        uses: mattnotmitt/doxygen-action@v1.1.0
+        with:
+          # Path to Doxyfile
+          doxyfile-path: "./Doxyfile" # default is ./Doxyfile
+          # Working directory
+          working-directory: "." # default is .
 
       #- name: Get asset name
       #  id: get_asset_name
@@ -56,5 +64,10 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./doc_html
+          publish_dir: ./html
 
+      #- name: Deploy
+      #      uses: peaceiris/actions-gh-pages@v3
+      #      with:
+      #        github_token: ${{ secrets.GITHUB_TOKEN }}
+      #        publish_dir: ./html
