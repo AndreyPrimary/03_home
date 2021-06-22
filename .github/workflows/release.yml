@@ -25,7 +25,7 @@ jobs:
           # Path to Doxyfile
           doxyfile-path: "./docs/Doxyfile" # default is ./Doxyfile
           # Working directory
-          working-directory: "." # default is .
+          working-directory: "./src" # default is .
 
       #- name: Doxygen Action  
       #  uses: mattnotmitt/doxygen-action@v1
