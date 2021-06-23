@@ -86,7 +86,7 @@ int print_ip(T val)
 
 // 2.Адрес может быть представлен в виде строки. Выводится как есть, вне зависимости от содержимого. 
 
-/** @brief   A silly function that wraps print_ip()
+/** @brief   A silly function that wraps print_ip() for std::string
  * @details  Адрес может быть представлен в виде строки. Выводится как есть, вне зависимости от содержимого. 
  * @param    val  An std::string compatible type
  * @return   0 - no error
@@ -104,7 +104,7 @@ int print_ip(T val)
 // Выводится  полное  содержимое  контейнера  поэлементно  и  разделяется  `.`  (символом точка). 
 // Элементы выводятся как есть. 
 
-/** @brief   A silly function that wraps print_ip()
+/** @brief   A silly function that wraps print_ip() for std::list std::vector
  * @details  Адрес  может  быть  представлен  в  виде  контейнеров  `std::list`,  `std::vector`. 
  * Выводится  полное  содержимое  контейнера  поэлементно  и  разделяется  `.`  (символом точка). 
  * Элементы выводятся как есть. 
