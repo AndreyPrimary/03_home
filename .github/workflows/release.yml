@@ -84,9 +84,9 @@ jobs:
       #    keep_files: true
       #    cname: github.peaceiris.com
 
-      - name: Deploy to GitHub Pages - copy
-        script:
-          - mv docs/html/ public/
-        artifacts:
-          paths:
-          - public          
+      #- name: Deploy to GitHub Pages - copy
+      #  script:
+      #    - mv docs/html/ public/
+      #  artifacts:
+      #    paths:
+      #    - public          
