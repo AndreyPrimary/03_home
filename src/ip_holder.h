@@ -5,6 +5,15 @@
 #include <list>
 #include <vector>
 
+/** @file      ip_holder.h
+ * @brief      print ip address from different source data
+ * @details    This simply example for using SFINAE in template
+ * for printing ip address from different data type
+ * @author     AndreyPrimary
+ * @copyright  MIT License, see repository LICENSE file
+ */
+
+
 // Реализовать функцию печати условного IP-адреса.  
 // Условность его заключается в том, что количество элементов 
 // не обязательно должно быть равно 4-ём или 8-ми, 
@@ -38,6 +47,13 @@ struct is_iterator<T, typename std::enable_if<
 using BYTE = unsigned char;
 using ipList = std::list<BYTE>;
 
+/** @brief   A silly function that wraps print_ip()
+ * @details  Адрес  может  быть  представлен  в  виде  произвольного  целочисленного  типа.  
+ * Выводить побайтово в беззнаковом виде, начиная со старшего байта, 
+ * с символом `.`(символ точки) в качестве разделителя. Выводятся все байты числа. 
+ * @param    val  An integer compatible type
+ * @return   0 - no error
+ */
 template <typename T, 
     std::enable_if_t<std::is_integral<T>::value, bool> = true>
 int print_ip(T val)
@@ -69,6 +85,12 @@ int print_ip(T val)
 }
 
 // 2.Адрес может быть представлен в виде строки. Выводится как есть, вне зависимости от содержимого. 
+
+/** @brief   A silly function that wraps print_ip()
+ * @details  Адрес может быть представлен в виде строки. Выводится как есть, вне зависимости от содержимого. 
+ * @param    val  An std::string compatible type
+ * @return   0 - no error
+ */
 template <typename T, 
     std::enable_if_t<std::is_same<T, std::string>::value, bool> = true>
 int print_ip(T val)    
@@ -81,6 +103,14 @@ int print_ip(T val)
 // 3.Адрес  может  быть  представлен  в  виде  контейнеров  `std::list`,  `std::vector`. 
 // Выводится  полное  содержимое  контейнера  поэлементно  и  разделяется  `.`  (символом точка). 
 // Элементы выводятся как есть. 
+
+/** @brief   A silly function that wraps print_ip()
+ * @details  Адрес  может  быть  представлен  в  виде  контейнеров  `std::list`,  `std::vector`. 
+ * Выводится  полное  содержимое  контейнера  поэлементно  и  разделяется  `.`  (символом точка). 
+ * Элементы выводятся как есть. 
+ * @param    val  An std::string compatible type
+ * @return   0 - no error
+ */
 template <
         template <class, class...> class Vec,
         class Tvec,
