@@ -74,12 +74,19 @@ jobs:
       #        github_token: ${{ secrets.GITHUB_TOKEN }}
       #        publish_dir: ./html
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html
+      #- name: Deploy to GitHub Pages
+      #  uses: peaceiris/actions-gh-pages@v3
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: ./docs/html
       #    allow_empty_commit: true
       #    enable_jekyll: true
-          keep_files: true
+      #    keep_files: true
       #    cname: github.peaceiris.com
+
+      - name: Deploy to GitHub Pages
+        script:
+          - mv docs/html/ public/
+        artifacts:
+          paths:
+          - public          
