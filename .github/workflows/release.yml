@@ -55,16 +55,18 @@ jobs:
           #asset_name: ${{ steps.get_asset_name.outputs.assert_name }}          
           asset_content_type: application/vnd.debian.binary-package
 
-      #- name: Deploy doxygen
-      #  uses: peaceiris/actions-gh-pages@v3
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    publish_dir: "./html"              
+      - name: Deploy doxygen
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/html
+      #    allow_empty_commit: true
+      #    enable_jekyll: true
+          keep_files: true
 
-      - name: Deploy to GitHub Pages - copy
-        script:
-          - mv docs/html/ public/
-        artifacts:
-          paths:
-          - public            
-          
+      #- name: Deploy to GitHub Pages - copy
+      #  script:
+      #    - mv docs/html/ public/
+      #  artifacts:
+      #    paths:
+      #    - public            
