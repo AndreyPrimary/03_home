@@ -55,8 +55,8 @@ jobs:
           #asset_name: ${{ steps.get_asset_name.outputs.assert_name }}          
           asset_content_type: application/vnd.debian.binary-package
 
-      - name: Deploy doxygen docs
-            uses: peaceiris/actions-gh-pages@v3
-            with:
-              github_token: ${{ secrets.GITHUB_TOKEN }}
-              publish_dir: ./docs/html
+      - name: Deploy doxygen
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: "./html"              
